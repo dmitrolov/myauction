@@ -1,0 +1,61 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+
+// ≥992px
++media-breakpoint-down(md)
+
+// ≥768px
++media-breakpoint-down(sm)
+
+// ≥576px
++media-breakpoint-down(xs)
+	
+
+/*==========  Mobile First  ==========*/
+// = @media (min-width: 0px) { ... }
++media-breakpoint-up(xs)
+
+@media (min-width: 340px)
+	.contentItemContainer
+		img
+			width: 300px
+			height: 300px
+// ≤576px
++media-breakpoint-up(sm)
+	
+// ≤768px
++media-breakpoint-up(md)
+	.secondaryMenu
+		.viewContainer
+			display: block
+	header
+		.dropdown-content
+			margin-left: 0
+			margin-right: 0
+	#contentBlock
+		overflow-y: scroll
+// ≤992px
+// = @media (min-width: 992px) { ... }
++media-breakpoint-up(lg) 
+	.logo
+		margin-bottom: 0em
+		text-align: left
+
+	.features
+		> h1 
+			font-size: 3em
+		section
+			padding: 30px
+			margin: 0px
+
+
+// ≤1200px
++media-breakpoint-up(xl)
+	
+	
+	

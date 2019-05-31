@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<title>My auction</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" href="img/logo.png">
+	<link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="container">
+				<div class="row align-items-center text-center">
+					<div class="logo col-xs-12 col-lg-3">
+						<img src="img/logo-inverted.png" alt="logo" title="logo">
+						<a href="#">My auction</a>
+					</div>
+					<nav class="col-xs-12 col-lg-9">
+						<div class="row align-items-center">
+							<div class="navItemBordered col">
+								<div class="dropdown">
+									<a href="#">Contacts</a>
+									<div class="dropdown-content">
+										<div class="row justify-content-center">
+											<div class="map col">
+											</div>
+											<div class="row">
+												<adress class="col-sm-12">
+													<img src="img/contactsMapImgIco1.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
+													<a href="#">LSE Houghton Street London</a>
+												</adress>
+												<adress class="col-sm-12">
+													<img src="img/contactsMapImgIco2.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
+													<a href="mailto:hello@gmail.com">hello@gmail.com</a>
+												</adress>
+												<adress class="col-sm-12">
+													<img src="img/contactsMapImgIco3.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
+													<a href="callto">+44(20)74057686</a>
+												</adress>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col dropdown">
+								<a class="dropbtn" href="#">Your lots (<span id="lotsInCartCount">0</span>)</a>
+								<div class="dropdown-content">
+									<div id="cartLotsContainer" class="row">
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<div id="contentBlock">
+			<section>
+				<div class="owl-carousel owl-theme carousel-lots">
+					<div class="hotLots-item">
+						<img src="img/logo.png" alt="" title="">
+					</div>
+				</div>
+			</section>
+			<section class="secondaryMenu text-center">
+				<div class="container">
+					<div class="content no-gutters row align-items-center">
+						<div class="col-12 col-md-4 col-lg-2">
+							<input id="search" class="text-center" type="text" placeholder="Fast search">
+						</div>
+						<div class="col-12 col-md-4 col-lg-2">
+							<div class="dropdown">
+								<a href="#" class="dropbtn">Sort via ⬇</a>
+								<div class="dropdown-content">
+									<a href="#" onclick="sort(lots, sortPriceAscending);">Cost (ascending)</a>
+									<a href="#" onclick="sort(lots, sortPriceDescending);">Cost (descending)</a>
+									<a href="#" onclick="sort(lots, sortYearAscending);">Year (ascending)</a>
+									<a href="#" onclick="sort(lots, sortYearDescending);">Year (descending)</a>
+									<a href="#" onclick="sort(lots, sortLotIdAscending);">Lot Id (ascending)</a>
+									<a href="#" onclick="sort(lots, sortLotIdDescending);">Lot Id (descending)</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-4 col-lg-2">
+							<div class="dropdown">
+								<a href="#" class="dropbtn">Categories ⬇</a>
+								<div class="dropdown-content">
+									<a onclick="categorySort('all')" href="#">All categories</a>
+									<a onclick="categorySort('Numismatics')" href="#">Numismatics</a>
+									<a onclick="categorySort('Painting and Graphics')" href="#">Painting and Graphics</a>
+									<a onclick="categorySort('Books')" href="#">Books</a>
+								</div>
+							</div>
+						</div>
+						<div class="priceForm col-12 col-md-6 col-lg-4">
+							<form action="">
+								Price
+								<input pattern="[0-9]{1,6}" id="priceFilterFrom" style="width: 4.5em"  placeholder="from" type="text">
+								-
+								<input pattern="[0-9]{1,6}" id="priceFilterTo" style="width: 4.5em"  placeholder="to" type="text">
+								<button onclick="priceSort(lots)">ok</button>
+							</form>
+						</div>
+						<div class="col-12 col-md-2 col-lg-1">
+							<div class="viewContainer">
+								<img src="img/listIcon.ico" onclick="listView();" alt="-">
+								<img src="img/gridIcon.ico" onclick="gridView();" alt="#">
+							</div>
+						</div>
+						<div class="col-12 col-md-4 col-lg-1">
+							<div class="dropdown addLotForm">
+								<button class="dropbtn inputButton">Add lot</button>
+								<div class="dropdown-content">
+									<form action="javascript:void(0);" class="row">
+										<input id="lotName"  required="true" class="col-12" type="text" placeholder="Lot name">
+										<select class="col-12" id="categoryId">
+											<option value="0">Numismatics</option>
+											<option value="1">Painting and Graphics</option>
+											<option value="2">Books</option>
+										</select>
+										<textarea name="" id="lotDescription" cols="30" rows="5" placeholder="description"></textarea>
+										<input required="true" class="col-12" id="lotOwner" type="text" placeholder="Owner">
+										<input required="true" class="col-12" id="lotStartPrice" type="text" pattern="[0-9]{1,6}" placeholder="Start price">
+										<input class="col-12" onclick='addLotValidation();' type="submit" value="Add">
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="container text-center">
+				<div id="mainContentContainer" class="row justify-content-center no-gutters">
+					<!-- Content -->
+				</div>
+			</section>
+			<section class="secondaryMenu text-center">
+				<div class="container">
+					<div id="pagination" class="row col-xs-12">
+
+					</div>
+				</div>
+			</section>
+		</div>
+		
+		<footer>
+			<div class="container">
+				
+				<div class="row">
+					<div class="col copyRights text-center">
+						2019 © My auction. All rights reserved.
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/fastSearch.js"></script>
+	<script src="js/cart.js"></script>
+	<script src="scripts.min.js"></script>
+	<script src="js/deepSearch.js"></script>
+	</body>
+	</html>
