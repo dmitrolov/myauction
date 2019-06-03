@@ -75,3 +75,27 @@ function sortLotIdDescending( a, b ) {
   }
   return 0;
 }
+function sortLotBidsAscending( a, b ) {
+  function getParam(elem) {
+    return elem.bids;
+  }
+  if ( getParam(a) < getParam(b) ){
+    return -1;
+  }
+  if ( getParam(a) > getParam(b) ){
+    return 1;
+  }
+  return 0;
+}
+function sortLotBidsDescending( a, b ) {
+  function getParam(elem) {
+    return elem.bids;
+  }
+  if ( getParam(a) < getParam(b) ){
+    return 1;
+  }
+  if ( getParam(a) > getParam(b) ){
+    return -1;
+  }
+  return 0;
+}

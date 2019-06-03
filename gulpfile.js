@@ -38,13 +38,15 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/owlCarousel/owl.carousel.min.js',
+		'node_modules/owl.carousel/dist/owl.carousel.js',
 		'app/js/global.js',
-		'app/js/Lot.js',
+		'app/js/lot.js',
 		'app/js/addingLot.js',
 		'app/js/view.js',
 		'app/js/deepSort.js',
+		'app/js/deepSearch.js',
 		'app/js/deepFiltration.js',
+		'app/js/carousel.js',
 		'app/js/cart.js',
 		'app/js/common.js', // Always at the end
 		])

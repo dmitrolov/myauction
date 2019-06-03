@@ -58,11 +58,18 @@
 			</div>
 		</header>
 		<div id="contentBlock">
-			<section>
-				<div class="owl-carousel owl-theme carousel-lots">
-					<div class="hotLots-item">
-						<img src="img/logo.png" alt="" title="">
-					</div>
+			<section class="container">
+				<div id="hot-lots-container" class="owl-carousel owl-theme carousel-lots">
+					<div class="hotLots-item row no-gutters"></div>
+					<div class="hotLots-item row no-gutters"></div>
+					<div class="hotLots-item row no-gutters"></div>
+					<div class="hotLots-item row no-gutters"></div>
+					<div class="hotLots-item row no-gutters"></div>
+					<div class="hotLots-item row no-gutters"></div>
+					<div class="hotLots-item row no-gutters"></div>
+					<div class="hotLots-item row no-gutters"></div>
+					<div class="hotLots-item row no-gutters"></div>
+					<div class="hotLots-item row no-gutters"></div>
 				</div>
 			</section>
 			<section class="secondaryMenu text-center">
@@ -81,6 +88,8 @@
 									<a href="#" onclick="sort(lots, sortYearDescending);">Year (descending)</a>
 									<a href="#" onclick="sort(lots, sortLotIdAscending);">Lot Id (ascending)</a>
 									<a href="#" onclick="sort(lots, sortLotIdDescending);">Lot Id (descending)</a>
+									<a href="#" onclick="sort(lots, sortLotBidsAscending);">Popularity (ascending)</a>
+									<a href="#" onclick="sort(lots, sortLotBidsDescending);">Popularity (descending)</a>
 								</div>
 							</div>
 						</div>
@@ -157,9 +166,6 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/fastSearch.js"></script>
-	<script src="js/cart.js"></script>
 	<script src="scripts.min.js"></script>
-	<script src="js/deepSearch.js"></script>
 	</body>
 	</html>

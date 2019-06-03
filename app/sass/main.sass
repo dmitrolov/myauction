@@ -18,15 +18,6 @@ body
 b, strong
 	font-weight: bold
 
-.testing-border
-	border: 1px solid red
-	> * 
-		border: 1px solid red
-		> *
-			border: 1px solid red
-			> *
-				border: 1px solid red
-
 button
 	border: 1px solid $myBlack
 // Main
@@ -56,7 +47,7 @@ button
 	display: none
 	position: absolute
 	background-color: $myGrey
-	min-width: 200px
+	min-width: 240px
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
 	z-index: 3
 
@@ -113,8 +104,14 @@ header
 
 // Carousel hot-lots styles
 .hotLots-item
-	max-width: 240px
-
+	img
+		height: 240px
+		object-fit: cover
+.carousel-lot-info
+	padding-left: 20px
+	padding-right: 20px
+	padding-top: 10px
+	padding-bottom: 10px
 // Content menu style
 .secondaryMenu
 	background-color: $myGrey

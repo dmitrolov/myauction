@@ -64,7 +64,7 @@ function viewLots(lots, page, count, viewType) {
       </div>
       </div>
       `)
-  }
+  };
   if (viewType) listView()
     else gridView()
   }
