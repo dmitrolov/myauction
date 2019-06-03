@@ -18,7 +18,8 @@ function RandomLot(id){
 	this.id = id;
 	var categoryId = random(0,categories.length);
 	this.category = categories[categoryId];
-	var rarity = random(0,4)
+	var rarity = random(0,4);
+	var _imageUrl = "";
 	function generateRandomName(categoryId, rarity) {
 		var rarityNames = ["Common", "Rare", "Epic", "Legendary"];
 		var name = rarityNames[rarity] + " ";
@@ -26,19 +27,28 @@ function RandomLot(id){
 			case 0: {
 				var material = ['golden', 'silver', 'copper', 'bronze'];
 				var categoryNames = ['coin'];
-				name += material[random(0, material.length)] + " " + categoryNames[0] + " ";
+				var materialNumber = random(0, material.length);
+				var categoryNumber = random(0, categoryNames.length);
+				_imageUrl = `../img/productImages/${categoryNames[categoryNumber]}/${material[materialNumber]}.jpg`;
+				name += material[materialNumber] + " " + categoryNames[categoryNumber] + " ";
 				break;
 			}
 			case 1: {
-				var material = ['oil', 'watercolor', 'gouache', 'scratched'];
-				var categoryNames = ["painting", "picture", "portrait", "landscape"];
-				name += material[random(0, material.length)] + " " + categoryNames[random(0, categoryNames.length)] + " ";
+				var material = ['oil', 'watercolor', 'gouache'];
+				var categoryNames = ["painting", "portrait", "landscape"];
+				var materialNumber = random(0, material.length);
+				var categoryNumber = random(0, categoryNames.length);
+				_imageUrl = `../img/productImages/${categoryNames[categoryNumber]}/${material[materialNumber]}.jpg`;
+				name += material[materialNumber] + " " + categoryNames[categoryNumber] + " ";
 				break;
 			}
 			case 2: {
-				var material = ['paper', 'leather', 'papyrus', 'stone'];
-				var categoryNames = ["book", "literature", "periodical"];
-				name += material[random(0, material.length)] + " " + categoryNames[random(0, categoryNames.length)] + " ";
+				var material = ['paper', 'leather', 'papyrus'];
+				var categoryNames = ["book"];
+				var materialNumber = random(0, material.length);
+				var categoryNumber = random(0, categoryNames.length);
+				_imageUrl = `../img/productImages/${categoryNames[categoryNumber]}/${material[materialNumber]}.jpg`;
+				name += material[materialNumber] + " " + categoryNames[categoryNumber] + " ";
 				break;
 			}
 			default: {
@@ -47,15 +57,17 @@ function RandomLot(id){
 		}
 		return name
 	}
+	
 	var year = random(1000,1800);
 	this.year = year;
 	name = generateRandomName(categoryId, rarity);
+	this.imageUrl = _imageUrl;
 	name += year + " year"
 	this.name = name;
 	this.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam rem sint magni eum repellendus ipsam laboriosam nemo inventore vel ea in, ab cumque, placeat aut, assumenda blanditiis consequatur aperiam sed?";
-	this.imageUrl = "https://picsum.photos/" + random(100, 500) + "/" + random(100, 500);
-	ownerNames = ['Admin', 'User', 'Guest', 'Ivan', 'Petro', 'Sandy', 'XXX_mlg_shrek_slayer_XXX'];
-	this.owner = ownerNames[random(0,ownerNames.length-1)];
+	//this.imageUrl = "https://picsum.photos/" + random(100, 500) + "/" + random(100, 500);
+	ownerNames = ['Admin', 'User', 'Guest', 'Ivan', 'Petro', 'Sandy'];
+	this.owner = ownerNames[random(0,ownerNames.length)];
 	bids = random(0,50);
 	this.bids = bids;
 	var today = new Date();
@@ -79,9 +91,11 @@ function getRandomLots(count) {
 		lots.push(new RandomLot(i));
 	}
 	log(lots);
-	return lots
+	//return JSON.stringify(lots);
+	return lots;
 }
 function makeABid(lotID) {
 	lots[lotID].bids++;
 	lots[lotID].currentPrice += lots[lotID].step;
+	lots[lotID].owner = "Current user"
 }

@@ -1,13 +1,10 @@
 function addToCart(i) {
-	console.log($(`#Cart${i}`)[0])
 	if ($(`#Cart${i}`)[0]) {$(`#Cart${i}`).remove();}
 	else {
-		console.log($('#lotsInCartCount')[0].innerHTML);
 		var lotsInCart = parseInt($('#lotsInCartCount')[0].innerHTML);
 		$('#lotsInCartCount')[0].innerHTML = ++lotsInCart;
 	}
 	makeABid(i);
-	log(lots);
 	$('#cartLotsContainer').append(`
 		<div id="Cart${i}" class="cartElementContainer">
 		<div class="row">

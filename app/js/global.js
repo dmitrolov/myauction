@@ -4,6 +4,21 @@ function random(min, max) {
 function log() {
 	console.log(arguments);
 }
+function timeFormat(date) {
+  var options = {
+    //era: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    weekday: 'long',
+    //timezone: 'UTC',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+  };
+  //log(date);
+  return date.toLocaleString("en-US", options);
+}
 function compare( a, b ) {
   if ( a < b ){
     return -1;

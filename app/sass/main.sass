@@ -36,35 +36,35 @@ button
 	cursor: pointer
 
 // Dropdowns style
-.dropbtn 
-	cursor: pointer
-
-.dropdown 
-	position: relative
+.dropdown
+	//position: relative
 	display: inline-block
-
-.dropdown-content
-	display: none
-	position: absolute
-	background-color: $myGrey
-	min-width: 240px
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
-	z-index: 3
-
-.dropdown-content a[href]
-	padding: 12px 16px
-	text-decoration: none
-	display: block
-	color: black
-
-.dropdown-content a:hover 
-	background-color: $myGreen
+	width: 100%
+	.dropdown-content
+		display: none
+		position: absolute
+		background-color: $myGrey
+		min-width: 240px
+		//box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+		z-index: 3
+		a
+			padding: 12px 16px
+			text-decoration: none
+			display: block
+			color: black
+		a:hover
+			background-color: $myGreen
 .dropdown:hover 
 	.dropdown-content 
-  		display: block
+  		display: flex
+  		flex-direction: column
 
 // Header style
 header
+	display: flex
+	flex-direction: column
+	text-align: center
+
 	padding-top: 0.5em
 	padding-bottom: 0.5em
 	background-color: $myBlack
@@ -73,16 +73,22 @@ header
 		color: white
 	.logo
 		font-size: 1.5em
+	nav
+		display: flex
+		flex-direction: row
+		width: 100%
+		justify-content: center
+		// Dropdowns	
+		.dropdown-content
+			
 	.navItem, .navItemBordered
+		width: 100%
 		padding: 0.5em
 	.navItemBordered
 		border-right: 1px solid white
-	.dropdown-content
-		margin-left: -90%
-		margin-right: 10%
-		a:hover 
-			background-color: rgba(0,0,0,0) 
+	
 	#cartLotsContainer
+		right: 0px
 		overflow-y: scroll
 		overflow-x: hidden
 		max-height: 80vh
@@ -92,16 +98,29 @@ header
 			height: 100px
 	.cartElementContainer
 		padding: 10px
-	.cartLotInfo
-
 	.cartBorder
 		margin-top: 10px
 		margin-left: 10%
 		margin-right: 10%
 		border-bottom: 1px solid $myBlack
-		
 
-
+.headerInfoPages
+	display: none
+	flex-direction: column
+	#contactsInfo
+		display: flex
+		flex-direction: column
+		justify-content: center
+		a
+			color: $myBlack
+			margin-left: 1em
+		address
+			align-items: center
+			justify-content: center
+			display: flex
+			flex-direction: row
+.headerInfoPages.open
+	display: flex
 // Carousel hot-lots styles
 .hotLots-item
 	img

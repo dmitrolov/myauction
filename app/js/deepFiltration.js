@@ -18,3 +18,14 @@ function filterByPrice(lots, from, to){
 	log(filteredLots);
 	return filteredLots;
 }
+function categoryFilter(category) {
+  lots = tempLots;
+  if (category != 'all') {lots = filterByCategory(lots, category);}
+  showFirstPage(lots);
+}
+function priceFilter() {
+  var priceFrom = parseInt($('#priceFilterFrom')[0].value);
+  var priceTo = parseInt($('#priceFilterTo')[0].value);
+  if(priceFrom && priceTo) {lots = filterByPrice(lots, priceFrom, priceTo)};
+  showFirstPage(lots);
+}

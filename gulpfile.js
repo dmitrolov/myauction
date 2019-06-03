@@ -43,6 +43,7 @@ gulp.task('scripts', function() {
 		'app/js/lot.js',
 		'app/js/addingLot.js',
 		'app/js/view.js',
+		'app/js/pagination.js',
 		'app/js/deepSort.js',
 		'app/js/deepSearch.js',
 		'app/js/deepFiltration.js',

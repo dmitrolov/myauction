@@ -12,51 +12,41 @@
 <body>
 	<div class="wrapper">
 		<header>
-			<div class="container">
-				<div class="row align-items-center text-center">
-					<div class="logo col-xs-12 col-lg-3">
-						<img src="img/logo-inverted.png" alt="logo" title="logo">
-						<a href="#">My auction</a>
-					</div>
-					<nav class="col-xs-12 col-lg-9">
-						<div class="row align-items-center">
-							<div class="navItemBordered col">
-								<div class="dropdown">
-									<a href="#">Contacts</a>
-									<div class="dropdown-content">
-										<div class="row justify-content-center">
-											<div class="map col">
-											</div>
-											<div class="row">
-												<adress class="col-sm-12">
-													<img src="img/contactsMapImgIco1.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
-													<a href="#">LSE Houghton Street London</a>
-												</adress>
-												<adress class="col-sm-12">
-													<img src="img/contactsMapImgIco2.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
-													<a href="mailto:hello@gmail.com">hello@gmail.com</a>
-												</adress>
-												<adress class="col-sm-12">
-													<img src="img/contactsMapImgIco3.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
-													<a href="callto">+44(20)74057686</a>
-												</adress>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col dropdown">
-								<a class="dropbtn" href="#">Your lots (<span id="lotsInCartCount">0</span>)</a>
-								<div class="dropdown-content">
-									<div id="cartLotsContainer" class="row">
-									</div>
-								</div>
-							</div>
-						</div>
-					</nav>
-				</div>
+			<div class="logo">
+				<img src="img/logo-inverted.png" alt="logo" title="logo">
+				<a href="#">My auction</a>
 			</div>
+			<nav>
+				<div class="navItemBordered">
+					<a onclick="displayHeaderInfo()" href="#">Contacts</a>
+				</div>
+				<div class="navItem">
+					<div class="dropdown">
+						<a href="#">Your lots (<span id="lotsInCartCount">0</span>)</a>
+						<div id="cartLotsContainer" class="dropdown-content">
+							
+						</div>
+					</div>
+				</div>
+			</nav>
 		</header>
+		<section class="headerInfoPages">
+			<div id="contactsMap"></div>
+			<div id="contactsInfo">
+				<address>
+					<img src="img/contactsMapImgIco1.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
+					<a href="#"> LSE Houghton Street London</a>
+				</address>
+				<address>
+					<img src="img/contactsMapImgIco2.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
+					<a href="mailto:hello@gmail.com"> hello@gmail.com</a>
+				</address>
+				<address>
+					<img src="img/contactsMapImgIco3.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
+					<a href="callto"> +44(20)74057686</a>
+				</address>
+			</div>
+		</section>
 		<div id="contentBlock">
 			<section class="container">
 				<div id="hot-lots-container" class="owl-carousel owl-theme carousel-lots">
@@ -79,28 +69,28 @@
 							<input id="search" class="text-center" type="text" placeholder="Fast search">
 						</div>
 						<div class="col-12 col-md-4 col-lg-2">
-							<div class="dropdown">
-								<a href="#" class="dropbtn">Sort via ⬇</a>
-								<div class="dropdown-content">
-									<a href="#" onclick="sort(lots, sortPriceAscending);">Cost (ascending)</a>
-									<a href="#" onclick="sort(lots, sortPriceDescending);">Cost (descending)</a>
-									<a href="#" onclick="sort(lots, sortYearAscending);">Year (ascending)</a>
-									<a href="#" onclick="sort(lots, sortYearDescending);">Year (descending)</a>
-									<a href="#" onclick="sort(lots, sortLotIdAscending);">Lot Id (ascending)</a>
-									<a href="#" onclick="sort(lots, sortLotIdDescending);">Lot Id (descending)</a>
-									<a href="#" onclick="sort(lots, sortLotBidsAscending);">Popularity (ascending)</a>
-									<a href="#" onclick="sort(lots, sortLotBidsDescending);">Popularity (descending)</a>
+							<div class="dropdown container">
+								<a class="dropbtn">Sort via ⬇</a>
+								<div class="dropdown-content row">
+									<a onclick="sort(lots, sortLotIdAscending);">Lot Id (ascending)</a>
+									<a onclick="sort(lots, sortLotIdDescending);">Lot Id (descending)</a>
+									<a onclick="sort(lots, sortPriceAscending);">Cost (ascending)</a>
+									<a onclick="sort(lots, sortPriceDescending);">Cost (descending)</a>
+									<a onclick="sort(lots, sortYearAscending);">Year (ascending)</a>
+									<a onclick="sort(lots, sortYearDescending);">Year (descending)</a>
+									<a onclick="sort(lots, sortLotBidsAscending);">Popularity (ascending)</a>
+									<a onclick="sort(lots, sortLotBidsDescending);">Popularity (descending)</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-12 col-md-4 col-lg-2">
-							<div class="dropdown">
-								<a href="#" class="dropbtn">Categories ⬇</a>
-								<div class="dropdown-content">
-									<a onclick="categorySort('all')" href="#">All categories</a>
-									<a onclick="categorySort('Numismatics')" href="#">Numismatics</a>
-									<a onclick="categorySort('Painting and Graphics')" href="#">Painting and Graphics</a>
-									<a onclick="categorySort('Books')" href="#">Books</a>
+							<div class="dropdown container">
+								<a class="dropbtn">Categories ⬇</a>
+								<div class="dropdown-content row">
+									<a onclick="categoryFilter('all')" href="#">All categories</a>
+									<a onclick="categoryFilter('Numismatics')" href="#">Numismatics</a>
+									<a onclick="categoryFilter('Painting and Graphics')" href="#">Painting and Graphics</a>
+									<a onclick="categoryFilter('Books')" href="#">Books</a>
 								</div>
 							</div>
 						</div>
@@ -110,7 +100,7 @@
 								<input pattern="[0-9]{1,7}" id="priceFilterFrom" style="width: 4.5em"  placeholder="from" type="text">
 								-
 								<input pattern="[0-9]{1,7}" id="priceFilterTo" style="width: 4.5em"  placeholder="to" type="text">
-								<button onclick="priceSort(lots)">ok</button>
+								<button onclick="priceFilter(lots)">ok</button>
 							</form>
 						</div>
 						<div class="col-12 col-md-2 col-lg-1">
@@ -120,9 +110,9 @@
 							</div>
 						</div>
 						<div class="col-12 col-md-4 col-lg-1">
-							<div class="dropdown addLotForm">
+							<div class="dropdown container addLotForm">
 								<button class="dropbtn inputButton">Add lot</button>
-								<div class="dropdown-content">
+								<div class="dropdown-content row">
 									<form action="javascript:void(0);" class="row">
 										<input id="lotName"  required="true" class="col-12" type="text" placeholder="Lot name">
 										<select class="col-12" id="categoryId">
@@ -167,5 +157,5 @@
 		</footer>
 	</div>
 	<script src="scripts.min.js"></script>
-	</body>
-	</html>
+</body>
+</html>

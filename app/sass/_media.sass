@@ -30,13 +30,26 @@
 	
 // ≤768px
 +media-breakpoint-up(md)
-	.secondaryMenu
-		.viewContainer
-			display: block
 	header
+		flex-direction: row
+		.logo
+			width: 50vh
+			padding-left: 1em
 		.dropdown-content
 			margin-left: 0
 			margin-right: 0
+	.headerInfoPages
+		flex-direction: row
+		justify-content: center
+		border-bottom: 1em solid $myGrey
+		div
+			width: 100%
+
+
+
+	.secondaryMenu
+		.viewContainer
+			display: block
 	#contentBlock
 		overflow-y: scroll
 // ≤992px

@@ -1,5 +1,5 @@
-$("#search").on('keyup', function (e) {
-  // if (e.keyCode == 13) {
+$("#search").on('keyup', function (e) { 
+  // if (e.keyCode == 13) { // After "Enter" pressed
   //   search();
   // }
   search();
