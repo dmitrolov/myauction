@@ -23,7 +23,7 @@ function addLotValidation() {
 	if (validation) {
 		addLot(id, categoryId, name, description, owner, startPrice);
 		addLotFormClear();
-		categorySort('all');
+		categoryFilter('all');
 		sort(lots, sortLotIdDescending);
 	}
 }

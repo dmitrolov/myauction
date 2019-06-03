@@ -41,12 +41,12 @@ gulp.task('scripts', function() {
 		'node_modules/owl.carousel/dist/owl.carousel.js',
 		'app/js/global.js',
 		'app/js/lot.js',
-		'app/js/addingLot.js',
 		'app/js/view.js',
 		'app/js/pagination.js',
 		'app/js/deepSort.js',
 		'app/js/deepSearch.js',
 		'app/js/deepFiltration.js',
+		'app/js/addingLot.js',
 		'app/js/carousel.js',
 		'app/js/cart.js',
 		'app/js/common.js', // Always at the end

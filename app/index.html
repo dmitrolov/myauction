@@ -24,7 +24,6 @@
 					<div class="dropdown">
 						<a href="#">Your lots (<span id="lotsInCartCount">0</span>)</a>
 						<div id="cartLotsContainer" class="dropdown-content">
-							
 						</div>
 					</div>
 				</div>
@@ -48,7 +47,7 @@
 			</div>
 		</section>
 		<div id="contentBlock">
-			<section class="container">
+			<section>
 				<div id="hot-lots-container" class="owl-carousel owl-theme carousel-lots">
 					<div class="hotLots-item row no-gutters"></div>
 					<div class="hotLots-item row no-gutters"></div>
@@ -62,70 +61,64 @@
 					<div class="hotLots-item row no-gutters"></div>
 				</div>
 			</section>
-			<section class="secondaryMenu text-center">
-				<div class="container">
-					<div class="content no-gutters row align-items-center">
-						<div class="col-12 col-md-4 col-lg-2">
-							<input id="search" class="text-center" type="text" placeholder="Fast search">
-						</div>
-						<div class="col-12 col-md-4 col-lg-2">
-							<div class="dropdown container">
-								<a class="dropbtn">Sort via ⬇</a>
-								<div class="dropdown-content row">
-									<a onclick="sort(lots, sortLotIdAscending);">Lot Id (ascending)</a>
-									<a onclick="sort(lots, sortLotIdDescending);">Lot Id (descending)</a>
-									<a onclick="sort(lots, sortPriceAscending);">Cost (ascending)</a>
-									<a onclick="sort(lots, sortPriceDescending);">Cost (descending)</a>
-									<a onclick="sort(lots, sortYearAscending);">Year (ascending)</a>
-									<a onclick="sort(lots, sortYearDescending);">Year (descending)</a>
-									<a onclick="sort(lots, sortLotBidsAscending);">Popularity (ascending)</a>
-									<a onclick="sort(lots, sortLotBidsDescending);">Popularity (descending)</a>
-								</div>
+			<section class="secondaryMenu">
+				<div class="wrap">
+					<div>
+						<input id="search" class="text-center" type="text" placeholder="Fast search">
+					</div>
+					<div>
+						<div class="dropdown">
+							<a>Sort via ⬇</a>
+							<div class="sort dropdown-content">
+								<a onclick="sort(lots, sortLotIdAscending);">Lot Id (ascending)</a>
+								<a onclick="sort(lots, sortLotIdDescending);">Lot Id (descending)</a>
+								<a onclick="sort(lots, sortPriceAscending);">Cost (ascending)</a>
+								<a onclick="sort(lots, sortPriceDescending);">Cost (descending)</a>
+								<a onclick="sort(lots, sortYearAscending);">Year (ascending)</a>
+								<a onclick="sort(lots, sortYearDescending);">Year (descending)</a>
+								<a onclick="sort(lots, sortLotBidsAscending);">Popularity (ascending)</a>
+								<a onclick="sort(lots, sortLotBidsDescending);">Popularity (descending)</a>
 							</div>
 						</div>
-						<div class="col-12 col-md-4 col-lg-2">
-							<div class="dropdown container">
-								<a class="dropbtn">Categories ⬇</a>
-								<div class="dropdown-content row">
-									<a onclick="categoryFilter('all')" href="#">All categories</a>
-									<a onclick="categoryFilter('Numismatics')" href="#">Numismatics</a>
-									<a onclick="categoryFilter('Painting and Graphics')" href="#">Painting and Graphics</a>
-									<a onclick="categoryFilter('Books')" href="#">Books</a>
-								</div>
+					</div>
+					<div>
+						<div class="dropdown">
+							<a>Categories ⬇</a>
+							<div class="categories dropdown-content">
+								<a onclick="categoryFilter('all')" href="#">All categories</a>
+								<a onclick="categoryFilter('Numismatics')" href="#">Numismatics</a>
+								<a onclick="categoryFilter('Painting and Graphics')" href="#">Painting and Graphics</a>
+								<a onclick="categoryFilter('Books')" href="#">Books</a>
 							</div>
 						</div>
-						<div class="priceForm col-12 col-md-6 col-lg-4">
-							<form action="javascript:void(0);">
-								Price
-								<input pattern="[0-9]{1,7}" id="priceFilterFrom" style="width: 4.5em"  placeholder="from" type="text">
-								-
-								<input pattern="[0-9]{1,7}" id="priceFilterTo" style="width: 4.5em"  placeholder="to" type="text">
-								<button onclick="priceFilter(lots)">ok</button>
-							</form>
-						</div>
-						<div class="col-12 col-md-2 col-lg-1">
-							<div class="viewContainer">
-								<img src="img/listIcon.ico" onclick="listView();" alt="-">
-								<img src="img/gridIcon.ico" onclick="gridView();" alt="#">
-							</div>
-						</div>
-						<div class="col-12 col-md-4 col-lg-1">
-							<div class="dropdown container addLotForm">
-								<button class="dropbtn inputButton">Add lot</button>
-								<div class="dropdown-content row">
-									<form action="javascript:void(0);" class="row">
-										<input id="lotName"  required="true" class="col-12" type="text" placeholder="Lot name">
-										<select class="col-12" id="categoryId">
-											<option value="0">Numismatics</option>
-											<option value="1">Painting and Graphics</option>
-											<option value="2">Books</option>
-										</select>
-										<textarea name="" id="lotDescription" cols="30" rows="5" placeholder="description"></textarea>
-										<input required="true" class="col-12" id="lotOwner" type="text" placeholder="Owner">
-										<input required="true" class="col-12" id="lotStartPrice" type="text" pattern="[0-9]{1,6}" placeholder="Start price">
-										<input class="col-12" onclick='addLotValidation();' type="submit" value="Add">
-									</form>
-								</div>
+					</div>
+				</div>
+				<div class="wrap">
+					<form action="javascript:void(0);">Price
+						<input pattern="[0-9]{1,7}" id="priceFilterFrom" style="width: 4.5em"  placeholder="from" type="text">-
+						<input pattern="[0-9]{1,7}" id="priceFilterTo" style="width: 4.5em"  placeholder="to" type="text">
+						<button onclick="priceFilter(lots)">ok</button>
+					</form>
+					<div class="viewContainer">
+						<img src="img/listIcon.ico" onclick="listView();" alt="-">
+						<img src="img/gridIcon.ico" onclick="gridView();" alt="#">
+					</div>
+					<div>
+						<div class="dropdown">
+							<button>Add lot</button>
+							<div class="addLotForm dropdown-content">
+								<form action="javascript:void(0);">
+									<input id="lotName" required="true" type="text" placeholder="Lot name">
+									<select id="categoryId">
+										<option value="0">Numismatics</option>
+										<option value="1">Painting and Graphics</option>
+										<option value="2">Books</option>
+									</select>
+									<textarea id="lotDescription" cols="30" rows="5" placeholder="description"></textarea>
+									<input required="true" id="lotOwner" type="text" placeholder="Owner">
+									<input required="true" id="lotStartPrice" type="text" pattern="[0-9]{1,6}" placeholder="Start price">
+									<input class="button" onclick='addLotValidation();' type="submit" value="Add">
+								</form>
 							</div>
 						</div>
 					</div>
@@ -139,20 +132,14 @@
 			<section class="secondaryMenu text-center">
 				<div class="container">
 					<div id="pagination" class="row col-xs-12">
-
+						<!-- Pagination -->
 					</div>
 				</div>
 			</section>
 		</div>
-		
 		<footer>
-			<div class="container">
-				
-				<div class="row">
-					<div class="col copyRights text-center">
-						2019 © My auction. All rights reserved.
-					</div>
-				</div>
+			<div class="copyRights text-center">
+				2019 © My auction. All rights reserved.
 			</div>
 		</footer>
 	</div>

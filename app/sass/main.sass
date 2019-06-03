@@ -18,34 +18,21 @@ body
 b, strong
 	font-weight: bold
 
-button
+button, .button
 	border: 1px solid $myBlack
 // Main
 
-// Buttons style
-.inputButton
-	background-color: $myGreen
-	border: none
-	border-radius: 1.5em
-	width: 6em
-	height: 3em
-	color: white
-.inputButton:hover
-	box-shadow: 0 0 10px rgba(0,0,0,0.5)
-	padding: 10px
-	cursor: pointer
-
 // Dropdowns style
 .dropdown
-	//position: relative
-	display: inline-block
-	width: 100%
+	position: relative
+	display: flex
 	.dropdown-content
+		top: 2em
 		display: none
 		position: absolute
 		background-color: $myGrey
 		min-width: 240px
-		//box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
 		z-index: 3
 		a
 			padding: 12px 16px
@@ -78,8 +65,6 @@ header
 		flex-direction: row
 		width: 100%
 		justify-content: center
-		// Dropdowns	
-		.dropdown-content
 			
 	.navItem, .navItemBordered
 		width: 100%
@@ -88,14 +73,15 @@ header
 		border-right: 1px solid white
 	
 	#cartLotsContainer
+		width: 100%
 		right: 0px
 		overflow-y: scroll
 		overflow-x: hidden
-		max-height: 80vh
+		max-height: 55vh
 		img
 			object-fit: cover
-			width: 100px
-			height: 100px
+			width: 200px
+			height: 200px
 	.cartElementContainer
 		padding: 10px
 	.cartBorder
@@ -133,12 +119,23 @@ header
 	padding-bottom: 10px
 // Content menu style
 .secondaryMenu
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	text-align: center
+
 	background-color: $myGrey
 	margin-bottom: 1em
-	.content
-		> div
-			padding-top: 10px
-			padding-bottom: 10px
+	a
+		color: black
+	.wrap
+		display: flex	
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		div
+			padding: 5px
 	.search
 		width: 100%
 		background-color: rgba(0, 0, 0, 0)
@@ -146,8 +143,10 @@ header
 		border: 1px solid #95989A
 		color: black
 		border-radius: 0
-	a
-		color: black
+	.sort.dropdown-content
+		left: -4.7em
+	.categories.dropdown-content
+		left: -4.1em
 	.priceForm
 		button
 			border: 1px solid $myBlack
@@ -157,10 +156,15 @@ header
 		display: none
 		img
 			width: 20px
-	.addLotForm
-		.dropdown-content
-			margin-left: -90%
-			margin-right: 10%
+	.addLotForm.dropdown-content
+		left: -6.2em
+		form 
+			display: flex
+			flex-direction: column
+			*
+				margin: 5px
+		
+			
 
 	#pagination 
 		padding-top: 0.5em
@@ -187,7 +191,6 @@ header
 	height: 100%
 
 // Content items style
-
 .contentItemContainer
 	width: 100%
 	margin-bottom: 20px
@@ -195,6 +198,8 @@ header
 		width: 280px
 		height: 280px
 		object-fit: cover
+	p, .nameItem
+		word-wrap: break-word
 
 footer
 	background-color: $myBlack

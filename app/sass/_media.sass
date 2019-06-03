@@ -44,10 +44,14 @@
 		border-bottom: 1em solid $myGrey
 		div
 			width: 100%
-
-
-
 	.secondaryMenu
+		display: flex
+		flex-direction: column
+		.wrap
+			flex-direction: row
+			div
+				padding-left: 12px
+				padding-right: 12px
 		.viewContainer
 			display: block
 	#contentBlock
@@ -58,7 +62,13 @@
 	.logo
 		margin-bottom: 0em
 		text-align: left
-
+	.secondaryMenu
+		flex-direction: row
+		div
+			padding-left: 12px
+			padding-right: 12px
+		.addLotForm.dropdown-content
+			left: -9em
 	.features
 		> h1 
 			font-size: 3em
@@ -66,9 +76,12 @@
 			padding: 30px
 			margin: 0px
 
+@media (min-width: 1152px)
+	.secondaryMenu
+		.addLotForm.dropdown-content
+			left: -6.2em
 
 // ≤1200px
 +media-breakpoint-up(xl)
-	
 	
 	
