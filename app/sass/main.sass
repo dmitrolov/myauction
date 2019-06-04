@@ -217,8 +217,6 @@ header
 	.lot.lotContainer
 		display: flex
 		flex-direction: column
-		align-items: center
-		justify-content: center
 
 		width: 320px
 		margin: 5px
@@ -235,6 +233,9 @@ header
 			object-fit: cover
 		p, .nameItem
 			word-wrap: break-word
+	.lot.lotContainer.galeryMode
+		.lotInfo
+			display: none
 
 .cartLotsContainer
 	flex-direction: column

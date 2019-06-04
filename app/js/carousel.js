@@ -4,7 +4,7 @@ $('.carousel-lots').owlCarousel({
 	smartSpeed: 700,
 	dots: true,
 	dotsEach: true,
-	//autoplay: true,
+	autoplay: true,
 	responsiveClass: true,
 	responsive: {
 		0: {

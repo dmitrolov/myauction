@@ -26,3 +26,6 @@ function showPage (lots, page){
 function displayHeaderInfo() {
   $(".headerInfoPages").toggleClass('open');
 }
+function galeryMode() {
+  $(".lot.lotContainer").toggleClass('galeryMode');
+}
