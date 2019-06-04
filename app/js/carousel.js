@@ -9,27 +9,27 @@ $('.carousel-lots').owlCarousel({
 	responsive: {
 		0: {
 			items: 1,
-			margin: 10,
+			//margin: 10,
 		},
 		425: {
 			items: 1,
-			margin: 10,
+			//margin: 10,
 		},
 		768: {
 			items: 1,
-			margin: 10,
+			//margin: 10,
 		},
 		992: {
 			items: 2,
-			margin: 30,
+			//margin: 30,
 		},
 		1200: {
 			items: 2,
-			margin: 30,
+			//margin: 30,
 		},
 		1440: {
 			items: 3,
-			margin: 30,
+			//margin: 30,
 		}
 	}
 });

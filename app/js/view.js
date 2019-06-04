@@ -41,9 +41,9 @@ function switchPage (lots, pageNumber, showPer, currentView, element){
     return;
   };
   for (var i = 0; i < $('#pagination')[0].children.length; i++) {
-    $('#pagination')[0].children[i].className = 'col';
+    $('#pagination')[0].children[i].className = '';
   };
-  element.className = "col active";
+  element.className = "active";
   viewLots(lots, pageNumber, showPer, currentView);
 }
 function showFirstPage (lots){

@@ -3,22 +3,22 @@
 
 /*==========  Desktop First  ==========*/
 
-// ≥1200px
-+media-breakpoint-down(lg)
+// // ≥1200px
+// +media-breakpoint-down(lg)
 
-// ≥992px
-+media-breakpoint-down(md)
+// // ≥992px
+// +media-breakpoint-down(md)
 
-// ≥768px
-+media-breakpoint-down(sm)
+// // ≥768px
+// +media-breakpoint-down(sm)
 
-// ≥576px
-+media-breakpoint-down(xs)
+// // ≥576px
+// +media-breakpoint-down(xs)
 	
 
 /*==========  Mobile First  ==========*/
 // = @media (min-width: 0px) { ... }
-+media-breakpoint-up(xs)
+// +media-breakpoint-up(xs)
 
 @media (min-width: 340px)
 	.lotContainer
@@ -26,10 +26,11 @@
 			width: 300px
 			height: 300px
 // ≤576px
-+media-breakpoint-up(sm)
+// +media-breakpoint-up(sm)
 
 // ≤768px
-+media-breakpoint-up(md)
+//+media-breakpoint-up(md)
+@media (min-width: 768px)
 	header
 		flex-direction: row
 		.logo
@@ -59,12 +60,13 @@
 				padding-left: 12px
 				padding-right: 12px
 		.viewContainer
-			display: block
+			display: flex
 	#contentBlock
 		overflow-y: scroll
 // ≤992px
 // = @media (min-width: 992px) { ... }
-+media-breakpoint-up(lg) 
+// +media-breakpoint-up(lg) 
+@media (min-width: 992px)
 	.logo
 		margin-bottom: 0em
 		text-align: left
@@ -91,6 +93,6 @@
 			left: -6.2em
 
 // ≤1200px
-+media-breakpoint-up(xl)
+// +media-breakpoint-up(xl)
 	
 	
