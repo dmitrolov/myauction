@@ -99,3 +99,47 @@ function makeABid(lotID) {
 	lots[lotID].currentPrice += lots[lotID].step;
 	lots[lotID].owner = "Current user"
 }
+function appendLot(lots, lotIdFrom, lotIdTo, lotContainer, lotPlacement) {
+	for (var i = lotIdFrom; i < lotIdTo; i++) {
+		$(lotContainer).append(`
+			<div id="${lotPlacement}-${i}" class="${lotPlacement} lotContainer">
+				<div class="lotImg">
+					<img src="${lots[i].imageUrl}" alt="Lot#${i} image">
+				</div>
+				<div class="lotInfo">
+		            <h2>Lot #${lots[i].id} - ${lots[i].name}</h2>
+		            <h4>Current price - $${lots[i].currentPrice}</h4>
+		            <h4>Lot leader - ${lots[i].owner}</h4>
+		            <h4>Finish date - ${timeFormat(lots[i].finish)}</h4>
+		            <h4>Bids count - ${lots[i].bids}</h4>
+		            <p>${lots[i].description}</p>
+		            <button onclick="addToCart(${i});">Make a bid</button>
+		        </div>
+			</div>
+			`);
+	}
+}
+function insertLot(lots, lotIdFrom, lotIdTo, lotContainer, lotPlacement) {
+	for (var i = lotIdFrom; i < lotIdTo; i++) {
+		$(lotContainer)[i].innerHTML = `
+			<div id="${lotPlacement}-${i}" class="${lotPlacement} lotContainer">
+				<div class="lotImg">
+					<img src="${lots[i].imageUrl}" alt="Lot#${i} image">
+				</div>
+				<div class="lotInfo">
+		            <h2>Lot #${lots[i].id} - ${lots[i].name}</h2>
+		            <h4>Current price - $${lots[i].currentPrice}</h4>
+		            <h4>Lot leader - ${lots[i].owner}</h4>
+		            <h4>Finish date - ${timeFormat(lots[i].finish)}</h4>
+		            <h4>Bids count - ${lots[i].bids}</h4>
+		            <p>${lots[i].description}</p>
+		            <button onclick="addToCart(${i});">Make a bid</button>
+		        </div>
+			</div>
+			`;
+	}
+}
+
+
+
+

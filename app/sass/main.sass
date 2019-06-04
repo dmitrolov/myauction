@@ -12,12 +12,6 @@ body
 .text-center
 	text-align: center
 
-.text-left
-	text-align: left
-
-b, strong
-	font-weight: bold
-
 button, .button
 	border: 1px solid $myBlack
 // Main
@@ -26,6 +20,8 @@ button, .button
 .dropdown
 	position: relative
 	display: flex
+	justify-content: center
+	text-align: center
 	.dropdown-content
 		top: 2em
 		display: none
@@ -44,7 +40,7 @@ button, .button
 .dropdown:hover 
 	.dropdown-content 
   		display: flex
-  		flex-direction: column
+  		//flex-direction: column
 
 // Header style
 header
@@ -54,6 +50,7 @@ header
 
 	padding-top: 0.5em
 	padding-bottom: 0.5em
+	margin-bottom: 1em
 	background-color: $myBlack
 
 	a, a:link, a:visited
@@ -64,31 +61,37 @@ header
 		display: flex
 		flex-direction: row
 		width: 100%
-		justify-content: center
 			
 	.navItem, .navItemBordered
 		width: 100%
 		padding: 0.5em
 	.navItemBordered
 		border-right: 1px solid white
-	
-	#cartLotsContainer
+
+// Carousel hot-lots styles
+.hotLots-item
+	display: flex
+	flex-direction: column
+	.carousel.lotContainer
+		justify-content: center
+		align-items: center
 		width: 100%
-		right: 0px
-		overflow-y: scroll
-		overflow-x: hidden
-		max-height: 55vh
+		display: flex
+		flex-direction: column
+		font-size: 12px
+		text-align: center
+		padding: 10px
+		padding-bottom: 0px
 		img
-			object-fit: cover
 			width: 200px
 			height: 200px
-	.cartElementContainer
-		padding: 10px
-	.cartBorder
-		margin-top: 10px
-		margin-left: 10%
-		margin-right: 10%
-		border-bottom: 1px solid $myBlack
+			object-fit: cover
+		.lotInfo
+			padding-left: 20px
+			padding-right: 20px
+			padding-top: 10px
+		p
+			display: none
 
 .headerInfoPages
 	display: none
@@ -107,16 +110,6 @@ header
 			flex-direction: row
 .headerInfoPages.open
 	display: flex
-// Carousel hot-lots styles
-.hotLots-item
-	img
-		height: 240px
-		object-fit: cover
-.carousel-lot-info
-	padding-left: 20px
-	padding-right: 20px
-	padding-top: 10px
-	padding-bottom: 10px
 // Content menu style
 .secondaryMenu
 	display: flex
@@ -144,8 +137,10 @@ header
 		color: black
 		border-radius: 0
 	.sort.dropdown-content
+		flex-direction: column
 		left: -4.7em
 	.categories.dropdown-content
+		flex-direction: column
 		left: -4.1em
 	.priceForm
 		button
@@ -169,7 +164,6 @@ header
 	#pagination 
 		padding-top: 0.5em
 		padding-bottom: 0.5em
-		// display: inline-block
 		a
 			float: left
 			padding: 8px 16px
@@ -190,16 +184,51 @@ header
 	flex-direction: column
 	height: 100%
 
-// Content items style
-.contentItemContainer
-	width: 100%
-	margin-bottom: 20px
-	img
-		width: 280px
-		height: 280px
-		object-fit: cover
-	p, .nameItem
-		word-wrap: break-word
+// Lot items style
+#contentContainer
+	width: 100vw
+	justify-content: center
+	flex-wrap: wrap
+
+	display: flex
+	flex-direction: row
+	text-align: center
+	padding: 10px
+
+	.lotContainer
+		display: flex
+		flex-direction: column
+		width: 320px
+		margin: 5px
+		margin-bottom: 1em
+		img
+			width: 280px
+			height: 280px
+			object-fit: cover
+		p, .nameItem
+			word-wrap: break-word
+
+.cartLotsContainer
+	flex-direction: column
+	flex-wrap: nowrap
+	overflow-y: scroll
+	overflow-x: hidden
+	max-height: 55vh
+	justify-content: start
+
+	width: 25vw
+	left: -7em
+	.lotContainer
+		width: 240px
+		padding: 10px
+		img
+			width: 100px
+			height: 100px
+			object-fit: cover
+		.nameItem
+			word-wrap: break-word
+		p
+			display: none
 
 footer
 	background-color: $myBlack
@@ -207,35 +236,6 @@ footer
 		color: #95989A
 		border-top: solid 1px white
 		margin-top: 10px
-
-
-
-
-
-.topnav 
-	background-color: #333
-	position: relative
-	#myLinks 
-		display: none
-	a 
-		color: white
-		padding: 14px 16px
-		text-decoration: none
-		font-size: 17px
-		display: block
-	a.icon 
-		background: black
-		display: block
-		position: absolute
-		right: 0
-		top: 0
-
-	a:hover 
-		background-color: #ddd
-		color: black
-.activeNav 
-  background-color: #4CAF50
-  color: white
 
 
 

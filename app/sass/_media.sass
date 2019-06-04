@@ -21,13 +21,13 @@
 +media-breakpoint-up(xs)
 
 @media (min-width: 340px)
-	.contentItemContainer
+	.lotContainer
 		img
 			width: 300px
 			height: 300px
 // ≤576px
 +media-breakpoint-up(sm)
-	
+
 // ≤768px
 +media-breakpoint-up(md)
 	header
@@ -44,6 +44,12 @@
 		border-bottom: 1em solid $myGrey
 		div
 			width: 100%
+	.cartLotsContainer
+		width: 25vw
+		left: -1em
+	.hotLots-item
+		.carousel.lotContainer
+			flex-direction: row
 	.secondaryMenu
 		display: flex
 		flex-direction: column
@@ -62,6 +68,7 @@
 	.logo
 		margin-bottom: 0em
 		text-align: left
+				
 	.secondaryMenu
 		flex-direction: row
 		div
@@ -69,12 +76,14 @@
 			padding-right: 12px
 		.addLotForm.dropdown-content
 			left: -9em
-	.features
-		> h1 
-			font-size: 3em
-		section
-			padding: 30px
-			margin: 0px
+	.cartLotsContainer
+		width: 320px
+		left: 0em
+		.lotContainer
+			width: 320px
+			img
+				width: 200px
+				height: 200px
 
 @media (min-width: 1152px)
 	.secondaryMenu
