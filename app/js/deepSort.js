@@ -1,7 +1,9 @@
+// sort(lots, LotId, Ascending);
+
 function sort(lots, sortType) {
   lots.sort(sortType);
   log(lots);
-  showFirstPage(lots);
+  showPage(lots, 0);
 }
 function sortPriceAscending( a, b ) {
   function getParam(elem) {
