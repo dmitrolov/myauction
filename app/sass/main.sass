@@ -44,7 +44,10 @@ button, .button
 			color: black
 		a:hover
 			background-color: $myGreen
-.dropdown:hover 
+.dropdown:hover:not(.addLot)
+	.dropdown-content 
+  		display: flex
+.dropdown.active
 	.dropdown-content 
   		display: flex
   		//flex-direction: column
@@ -217,7 +220,7 @@ header
 
 // Lot items style
 #contentContainer
-	width: 100vw
+	//width: 100vw
 	justify-content: center
 	flex-wrap: wrap
 

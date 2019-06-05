@@ -27,6 +27,7 @@ function addLotValidation() {
 		categoryFilter('all');
 		sort(lots, sortLotIdDescending);
 	}
+	showAddLotForm();
 }
 function addLotFormClear() {
 	$('#categoryId')[0].value = "";

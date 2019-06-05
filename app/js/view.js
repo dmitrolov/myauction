@@ -30,3 +30,6 @@ function displayHeaderInfo() {
 function galeryMode() {
   $(".lot.lotContainer").toggleClass('galeryMode');
 }
+function showAddLotForm() {
+  $(".dropdown.addLot").toggleClass('active');
+}
