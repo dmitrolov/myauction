@@ -1,10 +1,9 @@
-var lots = getRandomLots(50);
+var lots = getRandomLots(10000);
 var tempLots = lots;
 var lotsPerPage = 9;
 var currentView = true;
 $(document).ready(function(){
 	carouselDataLoad(lots);
-	viewPagination(lots);
 	showPage(lots, 0);
 })
 $('#contactsMap').append(`

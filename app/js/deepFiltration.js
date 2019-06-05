@@ -27,5 +27,8 @@ function priceFilter() {
   var priceFrom = parseInt($('#priceFilterFrom')[0].value);
   var priceTo = parseInt($('#priceFilterTo')[0].value);
   if(priceFrom && priceTo) {lots = filterByPrice(lots, priceFrom, priceTo)};
+  if(!priceFrom && priceTo) {lots = filterByPrice(lots, 0, priceTo)};
+  if(priceFrom && !priceTo) {lots = filterByPrice(lots, priceFrom, 999999999999)};
+  if(!priceFrom && !priceTo) {alert("fill in the field correctly");};
   showPage(lots, 0);
 }

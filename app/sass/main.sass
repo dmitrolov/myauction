@@ -20,6 +20,7 @@ section
 
 button, .button
 	border: 1px solid $myBlack
+
 // Main
 
 // Dropdowns style
@@ -77,6 +78,10 @@ header
 		flex-direction: row
 		align-items: center
 		width: 100%
+	#contactButton::after
+		content: " ⬇"
+	#contactButton.open::after
+		content: " ⬆"	
 			
 	.navItem, .navItemBordered
 		width: 100%
@@ -191,10 +196,15 @@ header
 		
 			
 
-#pagination 
+#pagination
+	width: 100vw
+	display: flex
+	justify-content: space-between
+	align-items: center
+	font-size: 12px
 	a
 		float: left
-		padding: 8px 16px
+		padding: 8px 8px
 		text-decoration: none
 	a.active
 		color: white

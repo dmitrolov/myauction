@@ -2,6 +2,9 @@ function changeView() {
   $(".lot.lotContainer").toggleClass("list");
 }
 function loadData(lots, page, lotContainer, lotPlacement){
+  if (page < 0) {page = 0};
+  var maxPage = Math.ceil(lots.length / lotsPerPage) - 1;
+  if (page > maxPage) {page = maxPage}
   if (lots.length == 0) {
     alert('no lots found');
     categoryFilter('all');
@@ -14,17 +17,15 @@ function loadData(lots, page, lotContainer, lotPlacement){
   if (lotIdTo > lots.length) { lotIdTo = lots.length};
   appendLot(lots, lotIdFrom, lotIdTo, lotContainer, lotPlacement);
   // Pagination
-  viewPagination(lots);
-  for (var i = 0; i < $('#pagination')[0].children.length; i++) {
-    $('#pagination')[0].children[i].className = '';
-  };
-  $('#pagination')[0].children[page].className = 'active';
+  viewPagination(lots, page);
+  //$('#pagination')[0].children[2].className = 'active';
 }
 function showPage (lots, page){
   loadData(lots, page, "#contentContainer", "lot")
 }
 function displayHeaderInfo() {
   $(".headerInfoPages").toggleClass('open');
+  $("#contactButton").toggleClass('open');
 }
 function galeryMode() {
   $(".lot.lotContainer").toggleClass('galeryMode');

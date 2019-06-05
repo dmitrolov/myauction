@@ -18,7 +18,7 @@
 			</div>
 			<nav>
 				<div class="navItemBordered">
-					<a onclick="displayHeaderInfo()" href="#">Contacts</a>
+					<a onclick="displayHeaderInfo()" href="#"><span id="contactButton">Contacts</span></a>
 				</div>
 				<div class="navItem dropdown">
 					<a href="#">Tracked lots (<span id="lotsInCartCount">0</span>)</a>
@@ -106,6 +106,7 @@
 							<div class="addLotForm dropdown-content">
 								<form action="javascript:void(0);">
 									<input id="lotName" required="true" type="text" placeholder="Lot name">
+									<input id="lotImage" type="text" placeholder="Lot image url">
 									<select id="categoryId">
 										<option value="0">Numismatics</option>
 										<option value="1">Painting and Graphics</option>
@@ -125,10 +126,8 @@
 
 			</section>
 			<section class="secondaryMenu text-center">
-				<div class="container">
-					<div id="pagination" class="row col-xs-12">
-						<!-- Pagination -->
-					</div>
+				<div id="pagination">
+					<!-- Pagination -->
 				</div>
 			</section>
 		</div>

@@ -1,11 +1,12 @@
 var categories = ["Numismatics", "Painting and Graphics", "Books"];
 
-function Lot(id, categoryId, name, description, owner, startPrice) {
+function Lot(id, categoryId, name, description, owner, startPrice, image) {
 	this.id = id;
 	this.category = categories[categoryId];
 	this.name = name;
 	this.description = description;
-	this.imageUrl = "https://picsum.photos/" + random(100, 500) + "/" + random(100, 500)
+	if (image) { this.imageUrl = image}
+		else {this.imageUrl = "https://picsum.photos/" + random(100, 500) + "/" + random(100, 500)}
 	this.owner = owner;
 	this.bids = 0;
 	this.created = new Date();
@@ -102,9 +103,9 @@ function makeABid(lotID) {
 function appendLot(lots, lotIdFrom, lotIdTo, lotContainer, lotPlacement) {
 	for (var i = lotIdFrom; i < lotIdTo; i++) {
 		$(lotContainer).append(`
-			<div id="${lotPlacement}-${i}" class="${lotPlacement} lotContainer">
+			<div id="${lotPlacement}-${lots[i].id}" class="${lotPlacement} lotContainer">
 				<div class="lotImg">
-					<img src="${lots[i].imageUrl}" alt="Lot#${i} image">
+					<img src="${lots[i].imageUrl}" alt="Lot#${lots[i].id} image">
 				</div>
 				<div class="lotInfo">
 		            <h2>Lot #${lots[i].id} - ${lots[i].name}</h2>
@@ -122,9 +123,9 @@ function appendLot(lots, lotIdFrom, lotIdTo, lotContainer, lotPlacement) {
 function insertLot(lots, lotIdFrom, lotIdTo, lotContainer, lotPlacement) {
 	for (var i = lotIdFrom; i < lotIdTo; i++) {
 		$(lotContainer)[i].innerHTML = `
-			<div id="${lotPlacement}-${i}" class="${lotPlacement} lotContainer">
+			<div id="${lotPlacement}-${lots[i].id}" class="${lotPlacement} lotContainer">
 				<div class="lotImg">
-					<img src="${lots[i].imageUrl}" alt="Lot#${i} image">
+					<img src="${lots[i].imageUrl}" alt="Lot#${lots[i].id} image">
 				</div>
 				<div class="lotInfo">
 		            <h2>Lot #${lots[i].id} - ${lots[i].name}</h2>

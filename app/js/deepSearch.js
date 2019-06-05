@@ -1,8 +1,9 @@
-$("#search").on('keyup', function (e) { 
-  // if (e.keyCode == 13) { // After "Enter" pressed
-  //   search();
-  // }
-  search();
+$("#search").on('keyup', function (e) {
+  if (lots.length > 100) {
+    if (e.keyCode == 13) { // After "Enter" pressed
+      search();
+    }
+  } else search();
 });
 function search() {
   lots = tempLots;
@@ -19,5 +20,5 @@ function search() {
   log(searchedLots);
   lots = searchedLots;
   viewPagination(lots);
-  showFirstPage(lots);
+  showPage(lots, 0);
 }
