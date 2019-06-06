@@ -1,4 +1,4 @@
-var lots = getRandomLots(10000);
+var lots = getRandomLots(100);
 var tempLots = lots;
 var lotsPerPage = 9;
 var currentView = true;
