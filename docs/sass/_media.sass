@@ -1,0 +1,139 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// // ≥1200px
+// +media-breakpoint-down(lg)
+
+// // ≥992px
+// +media-breakpoint-down(md)
+
+// // ≥768px
+// +media-breakpoint-down(sm)
+
+// // ≥576px
+// +media-breakpoint-down(xs)
+	
+
+/*==========  Mobile First  ==========*/
+// = @media (min-width: 0px) { ... }
+// +media-breakpoint-up(xs)
+
+@media (min-width: 340px)
+	.lotContainer
+		img
+			width: 300px
+			height: 300px
+// ≤576px
+// +media-breakpoint-up(sm)
+
+// ≤768px
+//+media-breakpoint-up(md)
+@media (min-width: 768px)
+	header
+		flex-direction: row
+		.logo
+			width: 50vh
+			padding-left: 1em
+		.dropdown-content
+			margin-left: 0
+			margin-right: 0
+	.headerInfoPages
+		flex-direction: row
+		justify-content: center
+		div
+			width: 100%
+		#contactsInfo
+			a
+				width: 30vw
+	.cartLotsContainer
+		width: 25vw
+		left: -1em
+	.hotLots-item
+		.carousel.lotContainer
+			padding: 10px
+			flex-direction: row
+	.secondaryMenu
+		display: flex
+		flex-direction: column
+		.wrap
+			flex-direction: row
+			div
+				padding-left: 12px
+				padding-right: 12px
+		.viewContainer
+			display: flex
+	#contentContainer
+		.lot.lotContainer
+			img
+				width: 300px
+				height: 300px
+		.lot.lotContainer.list
+			flex-direction: row
+			align-items: center
+			justify-content: center
+			//justify-content: space-between
+			flex-wrap: wrap
+			width: 100%
+			img
+				width: 100%
+				height: 200px
+			.lotImg
+				width: 30%
+			.lotInfo
+				width: 70%
+	#pagination
+		font-size: 16px
+		a
+			padding: 8px 16px
+		a:first-child
+			padding-left: 3em
+		a:last-child
+			padding-right: 3em
+	#contentBlock
+		overflow-y: scroll
+// ≤992px
+// = @media (min-width: 992px) { ... }
+// +media-breakpoint-up(lg) 
+@media (min-width: 992px)
+	.logo
+		margin-bottom: 0em
+		text-align: left	
+	.secondaryMenu
+		flex-direction: row
+		div
+			padding-left: 12px
+			padding-right: 12px
+		.addLotForm.dropdown-content
+			left: -9em
+	.cartLotsContainer
+		width: 320px
+		left: 0em
+		.lotContainer
+			width: 320px
+			img
+				width: 200px
+				height: 200px
+	#contentContainer
+		.lot.lotContainer.list
+			h4
+				display: block
+				margin: 10px
+			img
+				height: 300px
+	#pagination
+		a:first-child
+			padding-left: 5em
+		a:last-child
+			padding-right: 5em
+
+@media (min-width: 1152px)
+	.secondaryMenu
+		.addLotForm.dropdown-content
+			left: -6.2em
+
+// ≤1200px
+// +media-breakpoint-up(xl)
+	
+	

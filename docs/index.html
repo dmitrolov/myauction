@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<title>My auction</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" href="img/logo.png">
+	<link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="logo">
+				<img src="../app/img/logo-inverted.png" alt="logo" title="logo">
+				<a href="#">My auction</a>
+			</div>
+			<nav>
+				<div class="navItemBordered">
+					<a onclick="displayHeaderInfo()" href="#"><span id="contactButton">Contacts</span></a>
+				</div>
+				<div class="navItem dropdown">
+					<a href="#">Tracked lots (<span id="lotsInCartCount">0</span>)</a>
+					<div class="cartLotsContainer dropdown-content"></div>
+				</div>
+			</nav>
+		</header>
+		<section class="headerInfoPages">
+			<div id="contactsMap"></div>
+			<div id="contactsInfo">
+				<address>
+					<img src="img/contactsMapImgIco1.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
+					<a>Gogol Street, 10, Vinnitsa, Vinnytsia Oblast, 21000</a>
+				</address>
+				<address>
+					<img src="img/contactsMapImgIco2.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
+					<a href="mailto:hello@gmail.com"> hello@gmail.com</a>
+				</address>
+				<address>
+					<img src="img/contactsMapImgIco3.png" alt="contactsMapImgIco.png" title="contactsMapImgIco.png">
+					<a> +44(20)74057686</a>
+				</address>
+			</div>
+		</section>
+		<div id="contentBlock">
+			<section>
+				<div id="hot-lots-container" class="owl-carousel owl-theme carousel-lots">
+					<div class="hotLots-item"></div>
+					<div class="hotLots-item"></div>
+					<div class="hotLots-item"></div>
+					<div class="hotLots-item"></div>
+					<div class="hotLots-item"></div>
+					<div class="hotLots-item"></div>
+					<div class="hotLots-item"></div>
+					<div class="hotLots-item"></div>
+					<div class="hotLots-item"></div>
+					<div class="hotLots-item"></div>
+				</div>
+			</section>
+			<section class="secondaryMenu">
+				<div class="wrap">
+					<div>
+						<input id="search" class="text-center" type="text" placeholder="Fast search">
+					</div>
+					<div>
+						<div class="dropdown">
+							<a>Sort via ⬇</a>
+							<div class="sort dropdown-content">
+								<a onclick="sort(lots, sortLotIdAscending);">Lot Id (ascending)</a>
+								<a onclick="sort(lots, sortLotIdDescending);">Lot Id (descending)</a>
+								<a onclick="sort(lots, sortPriceAscending);">Cost (ascending)</a>
+								<a onclick="sort(lots, sortPriceDescending);">Cost (descending)</a>
+								<a onclick="sort(lots, sortYearAscending);">Year (ascending)</a>
+								<a onclick="sort(lots, sortYearDescending);">Year (descending)</a>
+								<a onclick="sort(lots, sortLotBidsAscending);">Popularity (ascending)</a>
+								<a onclick="sort(lots, sortLotBidsDescending);">Popularity (descending)</a>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="dropdown">
+							<a>Categories ⬇</a>
+							<div class="categories dropdown-content">
+								<a onclick="categoryFilter('all')" href="#">All categories</a>
+								<a onclick="categoryFilter('Numismatics')" href="#">Numismatics</a>
+								<a onclick="categoryFilter('Painting and Graphics')" href="#">Painting and Graphics</a>
+								<a onclick="categoryFilter('Books')" href="#">Books</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="wrap">
+					<form action="javascript:void(0);">Price
+						<input pattern="[0-9]{1,7}" id="priceFilterFrom" style="width: 4.5em"  placeholder="from" type="text">-
+						<input pattern="[0-9]{1,7}" id="priceFilterTo" style="width: 4.5em"  placeholder="to" type="text">
+						<button onclick="priceFilter(lots)">ok</button>
+					</form>
+					<div class="viewContainer">
+						<img src="img/listIcon.ico" onclick="changeView();" alt="-">
+						<img src="img/gridIcon.ico" onclick="galeryMode();" alt="#">
+					</div>
+					<div>
+						<div class="dropdown addLot">
+							<button onclick="showAddLotForm()">Add lot</button>
+							<div class="addLotForm dropdown-content">
+								<form action="javascript:void(0);">
+									<input id="lotName" required="true" type="text" placeholder="Lot name">
+									<input id="lotImage" type="text" placeholder="Lot image url">
+									<select id="categoryId">
+										<option value="0">Numismatics</option>
+										<option value="1">Painting and Graphics</option>
+										<option value="2">Books</option>
+									</select>
+									<textarea id="lotDescription" cols="30" rows="5" placeholder="description"></textarea>
+									<input required="true" id="lotOwner" type="text" placeholder="Owner">
+									<input required="true" id="lotStartPrice" type="text" pattern="[0-9]{1,6}" placeholder="Start price">
+									<input class="button" onclick='addLotValidation();' type="submit" value="Add">
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="contentContainer">
+
+			</section>
+			<section class="secondaryMenu text-center">
+				<div id="pagination">
+					<!-- Pagination -->
+				</div>
+			</section>
+		</div>
+		<footer>
+			<div class="copyRights text-center">
+				2019 © My auction. All rights reserved.
+			</div>
+		</footer>
+	</div>
+	<script src="scripts.min.js"></script>
+</body>
+</html>
